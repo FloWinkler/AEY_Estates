@@ -10,11 +10,13 @@ const Tech = () => {
   return (
     <div className='flex flex-wrap justify-center gap-10'>
       {[...Array(totalLines)].map((_, lineIndex) => (
-        <div className='flex flex-row justify-center gap-10' key={lineIndex}>
+        <div className='flex flex-wrap justify-center gap-10' style={{ maxWidth: "100%" }}
+        
+        >
           {technologies
             .slice(lineIndex * maxPerLine, (lineIndex + 1) * maxPerLine)
             .map((technology) => (
-              <div className='w-28 h-28' key={technology.name}>
+              <div className='w-28 h-28' key={technology.name} >
                <BallCanvas
                   icon={technology.icon}
                   style={technology.name === "Three JS" ? { color: "white" } : {}}
