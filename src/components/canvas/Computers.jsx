@@ -34,7 +34,7 @@ const Computers = ({ isMobile }) => {
           position={[ 0, 0.05, -2.9 ]}
           rotation-x={ - 0.256 }
         >
-          <iframe src="https://chess-game-inky.vercel.app/"/>
+          <iframe src="https://chess-game-inky.vercel.app/" />
         </Html>
     </mesh>
   );

@@ -213,6 +213,10 @@
   background: #252a3a;
 }
 
+.html-screen {
+position: fixed;
+}
+
 .underline-yellow {
   text-decoration: underline;
   text-decoration-color: #fde047;
