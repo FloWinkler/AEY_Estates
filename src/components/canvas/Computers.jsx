@@ -90,7 +90,6 @@ const ComputersCanvas = () => {
         />
         {/* Allow Model to slightly hover */}
         {/* <Laptop isMobile={isMobile} position-y={ 0.25 } /> */}
-        
         <Computers />
       </Suspense>
       
