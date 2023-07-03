@@ -2,6 +2,7 @@ import logo from "./logo.svg";
 import github from "./github.png";
 import menu from "./menu.svg";
 import finish from "./finish.png";
+import portrait from "./portrait.png";
 
 import certificate from "./certificate.png";
 import efz from "./efz.png";
@@ -32,6 +33,7 @@ export {
   menu,
   finish,
   github,
+  portrait,
 
   certificate,
   efz,

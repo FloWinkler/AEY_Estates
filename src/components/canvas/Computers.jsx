@@ -3,47 +3,43 @@ import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Preload, Float, useGLTF, Html } from "@react-three/drei";
 
 import CanvasLoader from "../Loader";
-import Laptop from "./Laptop"
+import "../../index.css";
 
-// const Computers = ({ isMobile }) => {
-//   const computer = useGLTF("./models/laptop.gltf");
+const Computers = ({ isMobile }) => {
+  const computer = useGLTF("./models/laptop.gltf");
+  return (
+    <mesh
+    rotation-y={5}
+    >
+      <hemisphereLight intensity={0.15} groundColor='black' />
+      <pointLight intensity={1} position={[-20, 50, 10]}/>
+      <spotLight
+        position={[-20, 50, 10]}
+        angle={0.12}
+        penumbra={1}
+        intensity={1}
+        castShadow
+        shadow-mapSize={1024}
+      />
+      <primitive
+        object={computer.scene}
+        scale={isMobile ? 0.7 : 1 }
+        position={isMobile ? [0, -3, -2.2] : [0, -1.5, -1.5]}
+      />
+        <Html
+          transform
+          wrapperClass="html-screen"
+          distanceFactor={ 1.17 }
+          scale={isMobile ? 0.7 : 3.4}
+          position={[ 0, 0.05, -2.9 ]}
+          rotation-x={ - 0.256 }
+        >
+          <iframe src="https://chess-game-inky.vercel.app/"/>
+        </Html>
+    </mesh>
+  );
+};
 
-//   return (
-//     <mesh>
-//       <hemisphereLight intensity={0.15} groundColor='black' />
-//       <pointLight intensity={1} position={[-20, 50, 10]}/>
-      // <spotLight
-      //   position={[-20, 50, 10]}
-      //   angle={0.12}
-      //   penumbra={1}
-      //   intensity={1}
-      //   castShadow
-      //   shadow-mapSize={1024}
-      // />
-      
-//       <primitive
-//         object={computer.scene}
-//         scale={isMobile ? 0.7 : 1 }
-//         position={isMobile ? [0, -3, -2.2] : [0, -1.5, -1.5]}
-//         // rotation={[-0.01, -0.2, -0.1]}
-//       />
-          // <Html
-          //       color='white'
-          //       transform
-          //       wrapperClass="html-screen"
-          //       distanceFactor={ 1.17 }
-          //       scale={isMobile ? 0.7 : 3.4}
-          //       position={[ 0, 0.05, -3 ]}
-          //       rotation-x={ - 0.256 }
-          //   >
-          //       <iframe src="https://chess-game-inky.vercel.app/"/>
-          //   </Html>
-//     </mesh>
-    
-//   );
-// };
-
-// { isMobile } pass as a prop below
 const ComputersCanvas = () => {
   const [isMobile, setIsMobile] = useState(false);
 
@@ -69,7 +65,7 @@ const ComputersCanvas = () => {
   }, []);
 
   return (
-    <Canvas
+    <Canvas 
       frameloop='demand'
       shadows
       dpr={[1, 2]}
@@ -89,12 +85,15 @@ const ComputersCanvas = () => {
           config={{ mass: 2, tension: 200 }}
           snap={{ mass: 4, tension: 400 }}
           enablePan={false}
-          minAzimuthAngle={-Math.PI / 4} // Adjust the minimum azimuth angle
-          maxAzimuthAngle={Math.PI / 5} // Adjust the maximum azimuth angle
+          minAzimuthAngle={-Math.PI / 1.7} // Adjust the minimum azimuth angle
+          maxAzimuthAngle={Math.PI / 100} // Adjust the maximum azimuth angle
         />
         {/* Allow Model to slightly hover */}
-        <Laptop isMobile={isMobile} position-y={ 0.25 } />
+        {/* <Laptop isMobile={isMobile} position-y={ 0.25 } /> */}
+        
+        <Computers />
       </Suspense>
+      
         <Preload all />
     </Canvas>
   );

@@ -205,14 +205,12 @@
   }
 }
 
-.html-screen iframe {
-  height: 670px;
-  width: 1000px;
+.html-screen iframe{
+  height: 200px;
+  width: 305px;
   border: none;
-  border-radius: 20px;
-  border-color: red;
-  background: green;
-  color: #252a3a;
+  border-radius: 10px;
+  background: #252a3a;
 }
 
 .underline-yellow {
