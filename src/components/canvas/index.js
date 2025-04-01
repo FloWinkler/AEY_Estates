@@ -1,6 +1,4 @@
-import DogCanvas from "./Dog";
-import BallCanvas from "./Ball";
-import ComputersCanvas from "./Computers";
+import KeyCanvas from "./Key";
 import StarsCanvas from "./Stars";
 
-export { DogCanvas, BallCanvas, ComputersCanvas, StarsCanvas };
+export { KeyCanvas, StarsCanvas };

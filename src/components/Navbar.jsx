@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 import { styles } from '../styles';
 import { navLinks } from '../constants';
-import { logo, menu, finish }  from '../assets';
+import { menu, finish }  from '../assets';
 
 const Navbar = () => {
   const [active, setActive] = useState("") 
@@ -22,21 +22,19 @@ const Navbar = () => {
             window.scrollTo(0,0);
           }}
         >
-          <img src={logo} alt="logo"  className="w-9 h9 object-contain"/>
-          <p className="text-white text-[18px] font-bold cursor-pointer flex">
-          Florian Winkler &nbsp;
-          <span className="sm:block hidden">Portfolio</span>
+          <p className="font-[Georgia] text-secondary text-[18px] cursor-pointer flex">
+          AEY ESTATES
           </p>
         </Link>
-        <ul className="list-none hidden sm:flex flex-row gap-10 underline-yellow space-x-2">
+        <ul className="list-none hidden sm:flex flex-row gap-10 space-x-2">
           {navLinks.map((link) =>(
             <li
               key={link.id}
               className={`${
                 active === link.title
                   ? "text-quaternary"
-                  : "text-white"
-              } hover:text-quaternary text-[18px] font-medium cursor-pointer`}
+                  : "text-quaternary"
+              } hover:text-tertiary text-[18px] font-medium cursor-pointer`}
               onClick={() => setActive(link.title)}
             >
               <a href={`#${link.id}`}>{link.title}</a>
